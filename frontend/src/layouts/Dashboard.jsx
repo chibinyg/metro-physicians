@@ -2,7 +2,7 @@ import AppNavbar from '../components/AppNavbar'
 import SideMenu from '../components/SideMenu'
 import Box from '@mui/material/Box'
 import Stack from '@mui/material/Stack'
-import Home from '../pages/dashboard/Home'
+import { Outlet } from 'react-router-dom'
 
 const Dashboard = () => {
     return (
@@ -26,7 +26,7 @@ const Dashboard = () => {
                         mt: { xs: 8, md: 0 },
                     }}
                 >
-                    <Home />
+                    <Outlet />
                 </Stack>
             </Box>
         </Box>
