@@ -6,15 +6,19 @@ import Typography from '@mui/material/Typography'
 import Divider from '@mui/material/Divider'
 import MenuContent from './MenuContent'
 import LogoutButton from './LogoutButton'
+import PropTypes from 'prop-types'
 
-const SideMenu = () => {
+const SideMenu = ({ open, toggleDrawer }) => {
+    const isMobile = toggleDrawer !== undefined
+
     return (
         <Drawer
-            variant="permanent"
+            variant={isMobile ? 'temporary' : 'permanent'}
+            anchor={isMobile ? 'right' : 'left'}
+            open={isMobile ? open : undefined}
+            onClose={isMobile ? toggleDrawer(false) : undefined}
             sx={{
-                display: {
-                    xs: 'none', md: 'block'
-                },
+                display: isMobile ? undefined : { xs: 'none', md: 'block' },
                 '& .MuiDrawer-paper': { boxSizing: 'border-box', width: 240 },
             }}
         >
@@ -51,6 +55,11 @@ const SideMenu = () => {
             <LogoutButton />
         </Drawer>
     )
+}
+
+SideMenu.propTypes = {
+    open: PropTypes.bool,
+    toggleDrawer: PropTypes.func,
 }
 
 export default SideMenu

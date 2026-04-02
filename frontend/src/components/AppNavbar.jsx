@@ -4,7 +4,7 @@ import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
 import IconButton from '@mui/material/IconButton'
 import MenuIcon from '@mui/icons-material/Menu'
-import SideMenuMobile from './SideMenuMobile'
+import SideMenu from './SideMenu'
 
 const AppNavbar = () => {
     const [open, setOpen] = useState(false)
@@ -32,7 +32,7 @@ const AppNavbar = () => {
                 <IconButton aria-label="open drawer" onClick={toggleDrawer(true)}>
                     <MenuIcon />
                 </IconButton>
-                <SideMenuMobile open={open} toggleDrawer={toggleDrawer} />
+                <SideMenu open={open} toggleDrawer={toggleDrawer} />
             </Toolbar>
         </AppBar>
     )
