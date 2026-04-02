@@ -1,20 +1,20 @@
 import Avatar from '@mui/material/Avatar'
 import PropTypes from 'prop-types'
-import Button from '@mui/material/Button'
 import Divider from '@mui/material/Divider'
+import LogoutButton from './LogoutButton'
 import Drawer from '@mui/material/Drawer'
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
-import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded'
 import MenuContent from './MenuContent'
 
 
-const SideMenuMobile = ({open, toggleDrawer}) => {
+const SideMenuMobile = ({ open, toggleDrawer }) => {
     return (
         <Drawer
             anchor="right"
             open={open}
             onClose={toggleDrawer(false)}
+            sx={{ '& .MuiDrawer-paper': { boxSizing: 'border-box', width: 240 } }}
         >
             <Stack
                 sx={{
@@ -22,7 +22,7 @@ const SideMenuMobile = ({open, toggleDrawer}) => {
                     height: '100%',
                 }}
             >
-                <Stack direction="row" sx={{ p: 2, pb: 0, gap: 1 }}>
+                <Stack direction="row" sx={{ p: 2, gap: 2 }}>
                     <Stack
                         direction="row"
                         sx={{ gap: 1, alignItems: 'center', flexGrow: 1, p: 1 }}
@@ -41,13 +41,9 @@ const SideMenuMobile = ({open, toggleDrawer}) => {
                 <Divider />
                 <Stack sx={{ flexGrow: 1 }}>
                     <MenuContent />
-                    <Divider />
                 </Stack>
-                <Stack sx={{ p: 2 }}>
-                    <Button variant="outlined" fullWidth startIcon={<LogoutRoundedIcon />}>
-                        Logout
-                    </Button>
-                </Stack>
+                <Divider />
+                <LogoutButton />
             </Stack>
         </Drawer>
     )
