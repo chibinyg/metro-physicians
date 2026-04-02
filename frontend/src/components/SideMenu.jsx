@@ -7,8 +7,10 @@ import Divider from '@mui/material/Divider'
 import MenuContent from './MenuContent'
 import LogoutButton from './LogoutButton'
 import PropTypes from 'prop-types'
+import { useAuth } from 'react-oidc-context'
 
 const SideMenu = ({ open, toggleDrawer }) => {
+    const auth = useAuth()
     const isMobile = toggleDrawer !== undefined
 
     return (
@@ -33,16 +35,16 @@ const SideMenu = ({ open, toggleDrawer }) => {
                 >
                     <Avatar
                         sizes="small"
-                        alt="Riley Carter"
+                        alt={auth.user?.profile.name}
                         src="/static/images/avatar/7.jpg"
                         sx={{ width: 36, height: 36 }}
                     />
                     <Box>
                         <Typography variant="body2" sx={{ fontWeight: 500, lineHeight: '16px' }}>
-                            Riley Carter
+                            {auth.user?.profile.name}
                         </Typography>
                         <Typography variant="caption" sx={{ color: 'text.secondary' }}>
-                            riley@email.com
+                            {auth.user?.profile.email}
                         </Typography>
                     </Box>
                 </Stack>

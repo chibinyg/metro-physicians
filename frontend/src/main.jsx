@@ -8,7 +8,7 @@ const cognitoAuthConfig = {
   client_id: "2g81gs3e1d9lkpb28i88jk41ru",
   redirect_uri: "http://localhost:5173/dashboard",
   response_type: "code",
-  scope: "email openid phone",
+  scope: "email openid phone profile",
 }
 
 createRoot(document.getElementById('root')).render(
