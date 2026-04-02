@@ -1,12 +1,12 @@
-import Avatar from '@mui/material/Avatar'
-import PropTypes from 'prop-types'
-import Divider from '@mui/material/Divider'
-import LogoutButton from './LogoutButton'
 import Drawer from '@mui/material/Drawer'
+import Box from '@mui/material/Box'
 import Stack from '@mui/material/Stack'
+import Avatar from '@mui/material/Avatar'
 import Typography from '@mui/material/Typography'
+import Divider from '@mui/material/Divider'
 import MenuContent from './MenuContent'
-
+import LogoutButton from './LogoutButton'
+import PropTypes from 'prop-types'
 
 const SideMenuMobile = ({ open, toggleDrawer }) => {
     return (
@@ -16,35 +16,38 @@ const SideMenuMobile = ({ open, toggleDrawer }) => {
             onClose={toggleDrawer(false)}
             sx={{ '& .MuiDrawer-paper': { boxSizing: 'border-box', width: 240 } }}
         >
-            <Stack
-                sx={{
-                    maxWidth: '85dvw',
-                    height: '100%',
-                }}
-            >
-                <Stack direction="row" sx={{ p: 2, gap: 2 }}>
-                    <Stack
-                        direction="row"
-                        sx={{ gap: 1, alignItems: 'center', flexGrow: 1, p: 1 }}
-                    >
-                        <Avatar
-                            sizes="small"
-                            alt="Riley Carter"
-                            src="/static/images/avatar/7.jpg"
-                            sx={{ width: 24, height: 24 }}
-                        />
-                        <Typography component="p" variant="h6">
+            <Box>
+                <Stack
+                    direction="row"
+                    sx={{
+                        p: 2,
+                        gap: 2,
+                        alignItems: 'center',
+                    }}
+                >
+                    <Avatar
+                        sizes="small"
+                        alt="Riley Carter"
+                        src="/static/images/avatar/7.jpg"
+                        sx={{ width: 36, height: 36 }}
+                    />
+                    <Box>
+                        <Typography variant="body2" sx={{ fontWeight: 500, lineHeight: '16px' }}>
                             Riley Carter
                         </Typography>
-                    </Stack>
+                        <Typography variant="caption" sx={{ color: 'text.secondary' }}>
+                            riley@email.com
+                        </Typography>
+                    </Box>
                 </Stack>
-                <Divider />
-                <Stack sx={{ flexGrow: 1 }}>
-                    <MenuContent />
-                </Stack>
-                <Divider />
-                <LogoutButton />
-            </Stack>
+            </Box>
+            <Divider />
+            <Box sx={{ height: '100%' }}>
+                <MenuContent />
+            </Box>
+            <Divider />
+            <LogoutButton />
+
         </Drawer>
     )
 }

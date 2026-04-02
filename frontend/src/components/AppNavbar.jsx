@@ -18,7 +18,7 @@ const AppNavbar = () => {
             position="fixed"
             color="default"
             sx={{
-                display: { xs: 'auto', md: 'none' },
+                display: { xs: 'block', md: 'none' },
                 boxShadow: 0,
                 bgcolor: 'background.paper',
                 borderBottom: '1px solid',

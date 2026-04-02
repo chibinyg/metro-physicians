@@ -44,14 +44,7 @@ const SideMenu = () => {
                 </Stack>
             </Box>
             <Divider />
-            <Box
-                sx={{
-                    overflow: 'auto',
-                    height: '100%',
-                    display: 'flex',
-                    flexDirection: 'column',
-                }}
-            >
+            <Box sx={{ height: '100%' }}>
                 <MenuContent />
             </Box>
             <Divider />
